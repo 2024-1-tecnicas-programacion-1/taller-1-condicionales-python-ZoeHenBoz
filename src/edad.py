@@ -1,6 +1,18 @@
+from datetime import date
+
 def evaluar(dia, mes, anno):
-    # TODO: Coloca aquí el código del ejercicio 6: Edad
-    return "";
+    currentDate = date.today()
+    diaActual = currentDate.day
+    mesActual = currentDate.month
+    annoActual = currentDate.year
+    edad = 0
+
+    if mes > mesActual or (mes == mesActual and dia > diaActual):
+        edad = annoActual - anno - 1
+    else:
+        edad = annoActual - anno
+
+    return f"Usted tiene {edad} años."
 
 if __name__ == '__main__':
     print("Ingrese su fecha de nacimiento")
